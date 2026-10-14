@@ -1,0 +1,15 @@
+{
+  "HelloPlugin": {
+    "name": "Hello Colario 插件",
+    "description": "一个用于演示的 MoviePilot V3 插件。",
+    "labels": "示例",
+    "version": "1.0.0",
+    "icon": "Moviepilot_A.png",
+    "author": "your-name",
+    "level": 1,
+    "system_version": ">=3.0.0",
+    "history": {
+      "v1.0.0": "首次发布。"
+    }
+  }
+}
