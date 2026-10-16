@@ -42,32 +42,41 @@ class HelloPlugin(_PluginBase):
         """没有 API 时返回空列表。"""
         return []
 
-    def get_form(self) -> tuple[list[dict], dict[str, Any]]:
-        """返回配置页面和默认配置。"""
+    def get_form(self) -> tuple[list[dict], dict]:
         return [
-            {
-                "component": "VForm",
-                "content": [
-                    {
-                        "component": "VSwitch",
-                        "props": {
-                            "model": "enabled",
-                            "label": "启用插件",
-                        },
+        {
+            "component": "VForm",
+            "content": [
+                {
+                    "component": "VTextField",
+                    "props": {
+                        "model": "token",
+                        "label": "QCW Token",
+                        "type": "password",
                     },
-                    {
-                        "component": "VTextField",
-                        "props": {
-                            "model": "message",
-                            "label": "展示文本",
-                        },
+                },
+                {
+                    "component": "VTextField",
+                    "props": {
+                        "model": "base_url",
+                        "label": "QCW 地址",
                     },
-                ],
-            }
-        ], {
-            "enabled": False,
-            "message": "Hello MoviePilot",
+                },
+                {
+                    "component": "VSwitch",
+                    "props": {
+                        "model": "enabled",
+                        "label": "启用插件",
+                    },
+                },
+            ],
         }
+    ], {
+        "enabled": False,
+        "base_url": "https://qcw.tangpt.top",
+        "token": "",
+    } 
+    
 
     def get_page(self) -> list[dict]:
         """插件详情页。"""
