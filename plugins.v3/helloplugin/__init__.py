@@ -48,26 +48,76 @@ class HelloPlugin(_PluginBase):
             "component": "VForm",
             "content": [
                 {
-                    "component": "VTextField",
+                    "component": "VRow",
                     "props": {
-                        "model": "token",
-                        "label": "QCW Token",
-                        "type": "password",
+                        "class": "mb-2",
                     },
+                    "content": [
+                        {
+                            "component": "VCol",
+                            "props": {
+                                "cols": 12,
+                            },
+                            "content": [
+                                {
+                                    "component": "VSwitch",
+                                    "props": {
+                                        "model": "enabled",
+                                        "label": "启用插件",
+                                    },
+                                }
+                            ],
+                        }
+                    ],
                 },
                 {
-                    "component": "VTextField",
+                    "component": "VRow",
                     "props": {
-                        "model": "base_url",
-                        "label": "QCW 地址",
+                        "class": "mb-2",
                     },
+                    "content": [
+                        {
+                            "component": "VCol",
+                            "props": {
+                                "cols": 12,
+                            },
+                            "content": [
+                                {
+                                    "component": "VTextField",
+                                    "props": {
+                                        "model": "base_url",
+                                        "label": "QCW 地址",
+                                        "placeholder": "https://qcw.tangpt.top",
+                                    },
+                                }
+                            ],
+                        }
+                    ],
                 },
                 {
-                    "component": "VSwitch",
+                    "component": "VRow",
                     "props": {
-                        "model": "enabled",
-                        "label": "启用插件",
+                        "class": "mb-2",
                     },
+                    "content": [
+                        {
+                            "component": "VCol",
+                            "props": {
+                                "cols": 12,
+                            },
+                            "content": [
+                                {
+                                    "component": "VTextField",
+                                    "props": {
+                                        "model": "token",
+                                        "label": "QCW Token",
+                                        "type": "password",
+                                        "autocomplete": "new-password",
+                                    },
+                                }
+                            ],
+                        }
+                    ],
                 },
             ],
         }
@@ -76,7 +126,6 @@ class HelloPlugin(_PluginBase):
         "base_url": "https://qcw.tangpt.top",
         "token": "",
     } 
-    
 
     def get_page(self) -> list[dict]:
         """插件详情页。"""
